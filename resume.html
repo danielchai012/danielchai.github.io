@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>履歷表</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header .title {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .main-content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #e0e6ff;
+            position: relative;
+        }
+
+        .experience-item::before, .education-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .job-title, .degree {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .company, .school {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .date {
+            color: #666;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .description {
+            color: #555;
+            margin-top: 8px;
+        }
+
+        .description ul {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        .description li {
+            margin-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #e0e6ff;
+            color: #667eea;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .personal-info p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                gap: 15px;
+                font-size: 0.8em;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .date {
+                margin-top: 5px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="header">
+            <h1>謝金峰</h1>
+            <div class="title">資料分析師</div>
+            <div class="contact-info">
+                <span>📧 chaikimfeng@gmail.com</span>
+                <span>📱 0965-086-571</span>
+                <span>📍 花蓮市，台灣</span>
+                <span>💼 linkedin.com/in/chaikimfeng</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h2>
+                    <svg class="section-icon" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    個人簡介
+                </h2>
+                <p>具有資料分析和視覺化實務經驗的資料分析師，熟悉Python程式設計、資料清洗處理及商業智慧工具應用。在慈濟基金會實習期間，透過資料分析協助組織提升決策效率，具備將複雜資料轉化為有價值洞察的能力。對於運用科技改善社會具有熱忱，期望在非營利組織或企業中發揮資料驅動的影響力。</p>
+            </section>
+
+            <section class="section">
+                <h2>
+                    <svg class="section-icon" viewBox="0 0 24 24">
+                        <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/>
+                    </svg>
+                    工作經驗
+                </h2>
+                
+                
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="job-title">資料分析實習生</div>
+                            <div class="company">佛教慈濟慈善事業基金會</div>
+                        </div>
+                        <div class="date">2023年2月 - 2024年6月</div>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>使用 Python 進行大量資料清洗和預處理，提升資料品質與可用性</li>
+                            <li>運用 Talend 建立 ETL 流程，自動化資料整合與轉換作業</li>
+                            <li>透過 Power BI 創建互動式儀表板，協助管理層進行資料驅動決策</li>
+                            <li>分析捐款趨勢和志工參與度，提供策略建議以優化資源配置</li>
+                            <li>協助建立資料標準化流程，提升跨部門資料一致性</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="job-title">系統開發工讀生</div>
+                            <div class="company">慈濟大學電算中心</div>
+                        </div>
+                        <div class="date">2021年3月 - 2022年6月</div>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>參與學資系統（學生資訊管理系統）的開發與維護工作</li>
+                            <li>負責系統功能測試、錯誤修復和使用者需求分析</li>
+                            <li>協助開發學生選課、成績查詢及學籍管理模組</li>
+                            <li>與校內各行政單位溝通，蒐集系統改善需求並提供技術支援</li>
+                            <li>協助系統文件撰寫和使用者教育訓練</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>
+                    <svg class="section-icon" viewBox="0 0 24 24">
+                        <path d="M5,13.18V4H12V2H3V14H5M21,6V4H14V12H16V7.18L24,14L16,21L14,19.59L20.59,14L16,9.41L21,6Z"/>
+                    </svg>
+                    教育背景
+                </h2>
+                
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="degree">資訊科技與管理學系 碩士</div>
+                            <div class="school">慈濟大學</div>
+                        </div>
+                        <div class="date">2023年9月 - 2025年6月</div>
+                    </div>
+                    <div class="description">
+                        主修課程：資料科學、商業智慧、資訊管理、統計分析、機器學習<br>
+                        碩士論文：運用大資料分析於非營利組織資源配置最佳化研究
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="degree">資訊科技與管理學系 學士</div>
+                            <div class="school">慈濟科技大學（現已合併至慈濟大學）</div>
+                        </div>
+                        <div class="date">2019年9月 - 2023年6月</div>
+                    </div>
+                    <div class="description">
+                        主修課程：程式設計、資料庫系統、系統分析與設計、網頁程式設計、資訊管理<br>
+                        畢業專題：校園智慧化管理系統設計與實作
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>
+                    <svg class="section-icon" viewBox="0 0 24 24">
+                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                    </svg>
+                    技能專長
+                </h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>機器學習與AI</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Deep Learning</span>
+                            <span class="skill-tag">ConvNeXt</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">Scikit-learn</span>
+                            <span class="skill-tag">Computer Vision</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>程式語言</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">R</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>資料處理工具</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Talend</span>
+                            <span class="skill-tag">OpenCV</span>
+                            <span class="skill-tag">Excel</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>資料視覺化</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Seaborn</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>資料庫與其他</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Jupyter</span>
+                            <span class="skill-tag">統計分析</span>
+                            <span class="skill-tag">醫學影像處理</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>
+                    <svg class="section-icon" viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z"/>
+                    </svg>
+                    個人資料
+                </h2>
+                
+                <div class="personal-info">
+                    <p><strong>語言能力：</strong>中文（母語）、英文（CEFR B2）</p>
+                    <p><strong>證照：</strong>Python ITS 認證、AWS Cloud Practitioner</p>
+                    <p><strong>興趣愛好：</strong>攝影、登山、閱讀技術書籍</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
